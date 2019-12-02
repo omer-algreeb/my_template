@@ -9,6 +9,22 @@ gem 'rails', '~> 6.0.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+
+gem 'acts_as_api'
+
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'
+
+gem 'consul'
+
+gem 'email_validator'
+
+gem 'enumerize'
+
+gem 'kaminari'
+
+gem 'smart_error'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production

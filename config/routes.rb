@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    namespace :v1, defaults: { format: :json } do
+      post 'login', to: 'authentication#authenticate'
+      post 'signup', to: 'users#create'
+      get 'home/index'
+    end
+  end
 end
