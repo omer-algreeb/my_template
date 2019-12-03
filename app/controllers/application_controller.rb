@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
 
+  before_action :authorize_request
+
   private
 
   # Check for valid request token and return user

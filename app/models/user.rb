@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  include UserPresenter
   # encrypt password
   has_secure_password
 
