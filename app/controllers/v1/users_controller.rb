@@ -9,7 +9,13 @@ class V1::UsersController < V1::BaseController
 
   skip_before_action :authorize_request, only: :create
 
+  # GET: /v1/users
+  # def index; end
+
+  ## ------------------------------------------------------------ ##
+
    # POST /signup
+   # POST /v1/users/:id
   # return authenticated token upon signup
   def create
     user = User.create!(user_params)
@@ -17,6 +23,23 @@ class V1::UsersController < V1::BaseController
     data = { message: Message.account_created, auth_token: auth_token }
     render_created(data: data, message: Message.account_created)
   end
+
+  ## ----------------------------------------------------------##
+
+  # GET: /v1/users/:id
+  # def show; end
+
+  ## ------------------------------------------------------------ ##
+
+  # PUT/PATCH: /v1/users/:id
+  # def update; end
+
+  ## ------------------------------------------------------------ ##
+
+  # DELETE: /v1/users/:id
+  # def destroy; end
+
+  ## ------------------------------------------------------------ ##
 
   private
 
