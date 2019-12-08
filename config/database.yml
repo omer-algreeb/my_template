@@ -8,8 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: app_templete_my2_development
+  database: app_templete_my_last_development
 
 test:
   <<: *default
-  database: app_templete_my2_test
+  database: app_templete_my2_last_test
