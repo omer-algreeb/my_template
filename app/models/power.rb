@@ -12,19 +12,19 @@ class Power
   end
 
   power :users_show do
-    User.find(current_user.id)
+    User
   end
 
   power :creatable_users do
-    current_user
+    User
   end
 
   power :updatable_users do
-    current_user
+    User
   end
 
   power :destroyable_users do
-    User.all
+    User
   end
 
   power :dashboard do

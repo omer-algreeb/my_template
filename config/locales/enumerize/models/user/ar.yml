@@ -1,0 +1,6 @@
+ar:
+  enumerize:
+    user:
+      status:
+        active: فعال
+        blocked: محظور

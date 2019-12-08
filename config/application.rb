@@ -24,7 +24,8 @@ module AppTempleteMy2
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+    # Load all translation files including folders
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     # Permitted locales available for the application
     I18n.available_locales = [:en, :ar]
