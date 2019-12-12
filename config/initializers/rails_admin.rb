@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
+  I18n.default_locale = :ar
 
   ## == Devise ==
   # config.authenticate_with do
@@ -31,6 +31,13 @@ RailsAdmin.config do |config|
     #   redirect_to main_app.access_login_path
     # end
     redirect_to main_app.access_login_path unless session[:user_id].present?
+  end
+
+  config.model 'User' do
+    include_all_fields # all other default fields will be added after, conveniently
+    field :password
+    field :avatar
+    exclude_fields :password_digest # but you still can remove fields
   end
 
   # other config stuff ...

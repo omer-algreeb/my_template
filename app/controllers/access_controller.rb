@@ -10,7 +10,7 @@ class AccessController < ActionController::Base
 
   def attempt_login
     if params[:email].present? && params[:password].present?
-      found_user = User.where(email: params[:email]).first
+      found_user = User.active.where(email: params[:email]).first
 
       if found_user
         # debugger

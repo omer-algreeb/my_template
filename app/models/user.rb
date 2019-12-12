@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
   include UserPresenter
 
+  has_one_attached :avatar
+
   # encrypt password
   has_secure_password
   extend Enumerize
