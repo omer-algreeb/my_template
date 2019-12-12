@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+</head>
+<body>
+  <td><%= link_to 'logout', access_logout_path, :class => 'action user' %></td>
+        <div id="content">
+          <%= content_tag :li do %>
+          <%= link_to "En", locale: :en %>
+          <% end unless current_page?(locale: :en) %>
+          <%= content_tag :li do %>
+          <%= link_to "Ar", locale: :ar %>
+          <% end unless current_page?(locale: :ar) %>
+        </div>
+  <h1>hello</h1>
+  <p>hello .... </p>
+</body>
+</html>
