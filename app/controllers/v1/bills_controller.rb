@@ -1,4 +1,4 @@
-class V1::AccontsController < V1::BaseController
+class V1::BillsController < V1::BaseController
   power :bills, map: {
     [:index] => :bills_index,
     [:show] => :bills_show,
