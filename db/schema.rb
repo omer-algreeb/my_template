@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_084158) do
+ActiveRecord::Schema.define(version: 2019_12_13_072410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acconts", force: :cascade do |t|
+    t.string "email"
+    t.string "account_number"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "account_balance"
+    t.index ["user_id"], name: "index_acconts_on_user_id", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,6 +46,17 @@ ActiveRecord::Schema.define(version: 2019_12_12_084158) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bills", force: :cascade do |t|
+    t.string "title"
+    t.float "price"
+    t.date "date"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bills_on_user_id"
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "add"
@@ -52,5 +73,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_084158) do
     t.integer "status", default: 0
   end
 
+  add_foreign_key "acconts", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
