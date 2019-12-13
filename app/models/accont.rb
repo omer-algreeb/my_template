@@ -1,0 +1,2 @@
+class Accont < ApplicationRecord
+end

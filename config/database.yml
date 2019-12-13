@@ -2,8 +2,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: jisr
-  password: jisr
+  username: omer
+  password: omer
   host: localhost
 
 development:
