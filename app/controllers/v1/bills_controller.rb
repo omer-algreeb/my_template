@@ -22,7 +22,8 @@ class V1::BillsController < V1::BaseController
         :title,
         :price,
         :date,
-        :description
+        :description,
+        :type_bill
       )
     end
 end

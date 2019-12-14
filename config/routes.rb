@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     namespace :v1, defaults: { format: :json } do
       post 'login', to: 'authentication#authenticate'
       post 'signup', to: 'users#create'
-
+      resources :bills
+      resources :acconts
       resources :users, except: [:new, :edit, :delete, :create]
     end
   end

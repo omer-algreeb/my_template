@@ -29,7 +29,7 @@ class Power
 
   power :bills_index,
         :bills_show,
-        :creatable_bill,
+        :creatable_bills,
         :updatable_bills,
         :destroyable_bills do
     current_user.bills
