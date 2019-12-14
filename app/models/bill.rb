@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: bills
+#
+#  id          :bigint           not null, primary key
+#  date        :date
+#  description :text
+#  price       :float
+#  title       :string
+#  type_bill   :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_bills_on_user_id  (user_id)
+#
+
 class Bill < ApplicationRecord
   include BillPresenter
   extend Enumerize
