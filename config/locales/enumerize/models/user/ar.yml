@@ -4,3 +4,7 @@ ar:
       status:
         active: فعال
         blocked: محظور
+    bill:
+      type_bill:
+        deposit: ايداع
+        withdrawal: سحب

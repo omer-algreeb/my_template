@@ -4,3 +4,7 @@ en:
       status:
         active: active
         blocked: blocked
+    bill:
+      type_bill:
+        deposit: Deposit
+        withdrawal: Withdrawal

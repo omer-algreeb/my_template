@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: app_templete_my_last_development
+  database: app_templete_my_last1_development
 
 test:
   <<: *default
