@@ -9,3 +9,6 @@ en:
   x_created_successfully: '%{name} created successfully'
   deleted_successfully:   'Deleted successfully'
   x_deleted_successfully: '%{name} deleted successfully'
+  base:
+    errors:
+      not_valed: 'Mot valus'

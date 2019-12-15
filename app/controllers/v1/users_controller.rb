@@ -26,6 +26,7 @@ class V1::UsersController < V1::BaseController
         :email,
         :password,
         :password_confirmation,
+        :role,
         :avatar
       )
     end

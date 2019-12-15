@@ -4,6 +4,9 @@ ar:
       status:
         active: فعال
         blocked: محظور
+      role:
+        admin: مدير
+        default: الافتراضي
     bill:
       type_bill:
         deposit: ايداع

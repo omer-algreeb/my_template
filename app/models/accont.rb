@@ -22,6 +22,6 @@
 class Accont < ApplicationRecord
   include AccontPresenter
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :accont
 
 end

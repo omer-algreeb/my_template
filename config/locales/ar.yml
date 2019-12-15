@@ -9,3 +9,6 @@ ar:
   x_created_successfully: 'تم إنشاء %{name} بنجاح'
   deleted_successfully:   'تم الحذف بنجاح'
   x_deleted_successfully: 'تم حذف %{name} بنجاح'
+  base:
+    errors:
+      not_valed: 'قيمة الادخال غير صحيحة'

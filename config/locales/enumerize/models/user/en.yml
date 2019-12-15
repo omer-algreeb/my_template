@@ -4,6 +4,9 @@ en:
       status:
         active: active
         blocked: blocked
+      role:
+        admin: Admin
+        default: Default
     bill:
       type_bill:
         deposit: Deposit

@@ -7,24 +7,27 @@ class Power
     self.current_user = user
   end
 
+  def get_by_role
+    if current_user.is_admin?
+      User.all
+    else
+      User.onle_permission(current_user.id)
+    end
+  end
+
   power :users_index do
-    User.all
+    get_by_role
   end
 
-  power :users_show do
-    User
-  end
-
-  power :creatable_users do
-    User
-  end
-
-  power :updatable_users do
-    User
-  end
-
-  power :destroyable_users do
-    User
+  power :users_show,
+        :creatable_users,
+        :updatable_users,
+        :destroyable_users do
+    if current_user.is_admin?
+      User
+    else
+      User.where(id: current_user.id)
+    end
   end
 
   power :bills_index,
@@ -32,7 +35,11 @@ class Power
         :creatable_bills,
         :updatable_bills,
         :destroyable_bills do
-    current_user.bills
+    if current_user.is_admin?
+      Bill.all
+    else
+      current_user.bills
+    end
   end
 
   power :acconts_index,
@@ -40,7 +47,11 @@ class Power
         :creatable_acconts,
         :updatable_acconts,
         :destroyable_acconts do
-    User
+    if current_user.is_admin?
+      Accont.all
+    else
+      Accont.where(id: current_user.accont.id)
+    end
   end
 
   power :dashboard do
