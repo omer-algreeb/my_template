@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post 'signup', to: 'users#create'
 
       resources :users, except: [:new, :edit, :delete, :create]
+      resources :organizations, except: [:new, :edit, :delete, :create]
     end
   end
 end

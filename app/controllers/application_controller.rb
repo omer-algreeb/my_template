@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::API
+  include JsonResponders
+  include ExceptionHandler
+  include MissingData
 
   before_action :authorize_request
 

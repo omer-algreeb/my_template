@@ -1,30 +1,27 @@
 class Power
   include Consul::Power
 
-  attr_accessor :current_user
+  attr_accessor :current_user, :organization
 
-  def initialize(user)
+  def initialize(user, organization)
     self.current_user = user
+    self.organization = organization
   end
 
-  power :users_index do
-    User.all
+  power :users_index,
+        :users_show,
+        :creatable_users
+        :updatable_users
+        :destroyable_users do
+    organization.users
   end
 
-  power :users_show do
-    User
-  end
-
-  power :creatable_users do
-    User
-  end
-
-  power :updatable_users do
-    User
-  end
-
-  power :destroyable_users do
-    User
+  power :organizations_index,
+        :organizations_show,
+        :creatable_organizations,
+        :updatable_organizations,
+        :destroyable_organizations do
+    Organization
   end
 
   power :dashboard do

@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  # Associations
+  belongs_to :organization
+
   include UserPresenter
 
   # encrypt password
