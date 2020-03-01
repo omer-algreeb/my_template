@@ -4,7 +4,8 @@ Rails.application.routes.draw do
       post 'login', to: 'authentication#authenticate'
       post 'signup', to: 'users#create'
 
-      resources :users, except: [:new, :edit, :delete, :create]
+      resources :users, except: [:new, :edit, :delete]
+      resources :organizations, except: [:new, :edit, :delete]
     end
   end
 end

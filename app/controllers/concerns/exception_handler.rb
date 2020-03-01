@@ -77,6 +77,6 @@ module ExceptionHandler
 
   # JSON response with message; Status code 401 - Unauthorized
   def unauthorized_request(e)
-    json_response({ message: e.message }, :unauthorized)
+    render_unauthorized(message: e.message)
   end
 end
