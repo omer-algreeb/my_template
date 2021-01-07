@@ -5,9 +5,14 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: build
     task:
       jobs:
         - name: 'Job #1'
           commands:
             - checkout
+  - name: deploy
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
